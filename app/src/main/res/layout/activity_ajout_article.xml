@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Ajout_article">
+
+    <Button
+        android:id="@+id/buttonAddAddItem"
+        android:layout_width="184dp"
+        android:layout_height="45dp"
+        android:text="Ajouter l'article"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBackAddItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PTAmountAddItem" />
+
+    <Button
+        android:id="@+id/buttonBackAddItem"
+        android:layout_width="103dp"
+        android:layout_height="61dp"
+        android:text="Retour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddAddItem" />
+
+    <EditText
+        android:id="@+id/PTNomAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nom Article"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/PTdescriptionAddItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTitleAddItem" />
+
+    <EditText
+        android:id="@+id/PTdescriptionAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Description de l'article"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/PTPriceAddItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PTNomAddItem" />
+
+    <EditText
+        android:id="@+id/PTPriceAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Prix de l'article"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/PTAmountAddItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PTdescriptionAddItem" />
+
+    <EditText
+        android:id="@+id/PTAmountAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Quantité article"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddAddItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PTPriceAddItem"
+        app:layout_constraintVertical_bias="0.442" />
+
+    <TextView
+        android:id="@+id/buttonTitleAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"
+        android:text="Ajouter un article"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/PTNomAddItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewbite"
+        android:layout_width="283dp"
+        android:layout_height="80dp"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="629dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

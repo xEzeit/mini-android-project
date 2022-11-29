@@ -11,19 +11,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Boutique Telephone"
-        android:textSize="40"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAddItem"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonAddAddItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="28dp" />
+        app:layout_constraintVertical_bias="0.514" />
 
     <Button
-        android:id="@+id/buttonAddItem"
+        android:id="@+id/buttonAddAddItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
         android:text="Ajouter un article"
         app:layout_constraintBottom_toTopOf="@+id/buttonListItems"
-        tools:layout_editor_absoluteX="106dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonListItems"
@@ -32,7 +35,8 @@
         android:layout_marginBottom="72dp"
         android:text="Liste des articles"
         app:layout_constraintBottom_toTopOf="@+id/buttonUpdateItem"
-        tools:layout_editor_absoluteX="112dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonUpdateItem"
@@ -41,5 +45,6 @@
         android:layout_marginBottom="220dp"
         android:text="Mettre un jour un article"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="75dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
