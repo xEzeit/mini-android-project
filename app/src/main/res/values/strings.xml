@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MiniProjectAndroid</string>
+    <string name="TextViewMessageListe">Liste des articles</string>
+    <string name="TextViewListeArticle">Liste des articles</string>
+    <string name="ListViewArticle"></string>
+    <string name="TextViewMessageModif">Modifier un article</string>
+    <string name="TextViewNomArticle">Nom</string>
+    <string name="EditViewNomArticle"></string>
+    <string name="TextViewDesArticle">Description</string>
+    <string name="EditViewDesArticle"></string>
+    <string name="TextViewPrixArticle">Prix</string>
+    <string name="EditViewPrixArticle"></string>
+    <string name="TextViewQteArticle">Quantité</string>
+    <string name="EditViewQteArticle"></string>
+    <string name="TextViewMessageAjout">Ajouter un article</string>
 </resources>
