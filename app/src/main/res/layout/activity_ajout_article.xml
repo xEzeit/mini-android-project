@@ -8,12 +8,12 @@
 
     <Button
         android:id="@+id/buttonAddAddItem"
-        android:layout_width="184dp"
-        android:layout_height="45dp"
+        android:layout_width="195dp"
+        android:layout_height="51dp"
         android:text="Ajouter l'article"
         app:layout_constraintBottom_toTopOf="@+id/buttonBackAddItem"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PTAmountAddItem" />
 
@@ -24,7 +24,7 @@
         android:text="Retour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.032"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonAddAddItem" />
 
@@ -62,7 +62,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Prix de l'article"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/PTAmountAddItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -76,7 +76,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Quantité article"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/buttonAddAddItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,12 +97,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textViewbite"
-        android:layout_width="283dp"
-        android:layout_height="80dp"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="629dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

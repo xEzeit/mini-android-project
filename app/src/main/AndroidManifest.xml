@@ -21,7 +21,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".listeArticle"
+            android:name=".ListeArticle"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Ajout_article"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

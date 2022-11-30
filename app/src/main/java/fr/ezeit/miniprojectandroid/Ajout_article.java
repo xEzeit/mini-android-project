@@ -2,13 +2,11 @@ package fr.ezeit.miniprojectandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class Ajout_article extends AppCompatActivity {
 
@@ -18,6 +16,7 @@ public class Ajout_article extends AppCompatActivity {
         setContentView(R.layout.activity_ajout_article);
 
         Button buttonAddAddItem = (Button)findViewById(R.id.buttonAddAddItem);
+        Button Backbutton = (Button) findViewById(R.id.buttonBackAddItem);
         EditText ptnom = (EditText)findViewById(R.id.PTNomAddItem);
         EditText ptdescription = (EditText)findViewById(R.id.PTdescriptionAddItem);
         EditText ptprice = (EditText)findViewById(R.id.PTPriceAddItem);
@@ -27,12 +26,33 @@ public class Ajout_article extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                nom = ptnom.getText().toString();
+                description = ptdescription.getText().toString();
+                price = ptprice.getText().toString();
+                amount = ptamount.getText().toString();
+
+                Article article = new Article(nom, description, Double.parseDouble(price), Integer.parseInt(amount));
+
+                Intent intent = new Intent(Ajout_article.this, ListeArticle.class);
+                intent.putExtra("article", article);
+                startActivity(intent);
             }
         });
-    }
 
+        Backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Ajout_article.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
+    }
     private String nom;
     private String description;
-    private double price;
-    private int amount;
+    private String price;
+    private String amount;
 }

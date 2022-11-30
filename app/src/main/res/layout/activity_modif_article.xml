@@ -22,8 +22,8 @@
         android:id="@+id/textViewNomArticle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="139dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="208dp"
         android:text="@string/TextViewNomArticle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editViewPrixArticle" />
 
     <Button
-        android:id="@+id/buttonRetour"
+        android:id="@+id/buttonModifRetour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"
