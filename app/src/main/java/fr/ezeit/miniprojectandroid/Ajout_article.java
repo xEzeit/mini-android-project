@@ -2,14 +2,19 @@ package fr.ezeit.miniprojectandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Ajout_article extends AppCompatActivity {
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
+public class Ajout_article extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +36,14 @@ public class Ajout_article extends AppCompatActivity {
                 price = ptprice.getText().toString();
                 amount = ptamount.getText().toString();
 
+                String header = "name;description;price;amount\n";
+                String phone = nom + ";" + description + ";" + price +  ";" + amount + "\n";
+                try {
+                    article.pushToCSV(phone);;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 Article article = new Article(nom, description, Double.parseDouble(price), Integer.parseInt(amount));
 
                 Intent intent = new Intent(Ajout_article.this, ListeArticle.class);
@@ -46,11 +59,16 @@ public class Ajout_article extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
     }
+
+    private ArrayList<Article> phones = new ArrayList<Article>();
+
+    //Intent getphoneslist = getIntent();
+    //ArrayList<String> Phones = (ArrayList<String>) getphoneslist.getSerializableExtra("PHONES_ARRAY_LIST");
+
+
+    private Article article = new Article(this);
+    private Context context;
     private String nom;
     private String description;
     private String price;

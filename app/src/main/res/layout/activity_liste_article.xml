@@ -10,7 +10,7 @@
         android:id="@+id/textViewMessageListe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="28dp"
         android:text="@string/TextViewMessageListe"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -18,33 +18,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewListeArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/TextViewListeArticle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMessageListe" />
-
-    <TextView
-        android:id="@+id/listViewArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="246dp"
-        android:text="@string/ListViewArticle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/buttonModifRetour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="446dp"
         android:text="Retour"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewListeArticle" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/listViewArticle"
+        android:layout_width="410dp"
+        android:layout_height="572dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonModifRetour"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMessageListe"
+        app:layout_constraintVertical_bias="0.295"
+        tools:layout_editor_absoluteX="1dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

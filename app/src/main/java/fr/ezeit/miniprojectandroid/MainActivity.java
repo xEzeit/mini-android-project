@@ -15,6 +15,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*// ZEUB DANS LE CUL
+        ArrayList<String> Phones = MainActivity.APhoneList;
+        Intent i = new Intent(this, MainActivity.class);
+        i.putExtra("PHONES_ARRAY_LIST", this.APhoneList);
+        /// ////////////    /*/
 
         //Article article = (Article) getIntent().getSerializableExtra("article");
         //ListArticle.add(article);
@@ -49,8 +54,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private boolean b1 = false;
-    //ArrayList Article
-    public ArrayList<Article> ListArticle = new ArrayList<>();
 }
