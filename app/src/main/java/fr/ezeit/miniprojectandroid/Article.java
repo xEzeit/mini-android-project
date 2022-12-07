@@ -1,6 +1,7 @@
 package fr.ezeit.miniprojectandroid;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Article implements Serializable {
     private String name;
@@ -56,4 +57,6 @@ public class Article implements Serializable {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    //public ArrayList<Article> ListArticle = new ArrayList<>();
 }

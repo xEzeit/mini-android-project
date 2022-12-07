@@ -18,101 +18,85 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewNomArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="208dp"
-        android:text="@string/TextViewNomArticle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/editViewNomArticle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
+        android:hint="Nom"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:text="@string/EditViewNomArticle"
-        app:layout_constraintStart_toEndOf="@+id/textViewNomArticle"
-        app:layout_constraintTop_toBottomOf="@+id/textViewMessageModif" />
-
-    <TextView
-        android:id="@+id/textViewDesArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="28dp"
-        android:text="@string/TextViewDesArticle"
+        app:layout_constraintBottom_toTopOf="@+id/editViewDesArticle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editViewNomArticle" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewMessageModif" />
 
     <EditText
         android:id="@+id/editViewDesArticle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="32dp"
         android:ems="10"
+        android:hint="Description"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:text="@string/EditViewDesArticle"
-        app:layout_constraintStart_toEndOf="@+id/textViewDesArticle"
+        app:layout_constraintBottom_toTopOf="@+id/editViewPrixArticle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editViewNomArticle" />
-
-    <TextView
-        android:id="@+id/textViewPrixArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/TextViewPrixArticle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDesArticle" />
-
-    <EditText
-        android:id="@+id/editViewPrixArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/EditViewPrixArticle"
-        app:layout_constraintStart_toEndOf="@+id/textViewPrixArticle"
-        app:layout_constraintTop_toBottomOf="@+id/editViewDesArticle" />
-
-    <TextView
-        android:id="@+id/textViewQteArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="49dp"
-        android:text="@string/TextViewQteArticle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPrixArticle" />
 
     <EditText
         android:id="@+id/editViewQteArticle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="68dp"
         android:ems="10"
+        android:hint="Quantité"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:text="@string/EditViewQteArticle"
-        app:layout_constraintStart_toEndOf="@+id/textViewQteArticle"
+        app:layout_constraintBottom_toTopOf="@+id/buttonModifRetour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editViewPrixArticle" />
+
+    <EditText
+        android:id="@+id/editViewPrixArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="Prix"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/EditViewPrixArticle"
+        app:layout_constraintBottom_toTopOf="@+id/editViewQteArticle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editViewDesArticle" />
 
     <Button
         android:id="@+id/buttonModifRetour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="50dp"
-        android:text="retour"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="68dp"
+        android:text="Appliquer -> Retour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editViewQteArticle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -15,6 +16,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        System.out.println("ARRAYLIST ARTICLES" + ListArticle);
+        System.out.println(getIntent().getSerializableExtra("article"));
+
+        if (getIntent().getSerializableExtra("article")==null) { // Instanciation de la liste d’article
+            ListArticle.add(new Article("iPhone 14 Pro Max", "256Go", 1609, 1));
+        } else{
+            ListArticle = (ArrayList<Article>) getIntent().getSerializableExtra("article");
+        }
 
         //Article article = (Article) getIntent().getSerializableExtra("article");
         //ListArticle.add(article);
@@ -25,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent IntentAddItem = new Intent(MainActivity.this, Ajout_article.class);
+                IntentAddItem.putExtra("article", ListArticle);
                 startActivity(IntentAddItem);
             }
         });
@@ -35,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent IntentListItems = new Intent(MainActivity.this, ListeArticle.class);
+                IntentListItems.putExtra("article", ListArticle);
                 startActivity(IntentListItems);
             }
         });
@@ -45,12 +56,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent IntentUpdateItems = new Intent(MainActivity.this, ModifArticle.class);
+                IntentUpdateItems.putExtra("article", ListArticle);;
                 startActivity(IntentUpdateItems);
             }
         });
     }
-
     private boolean b1 = false;
     //ArrayList Article
-    public ArrayList<Article> ListArticle = new ArrayList<>();
+    private ArrayList<Article> ListArticle = new ArrayList<>();
 }
