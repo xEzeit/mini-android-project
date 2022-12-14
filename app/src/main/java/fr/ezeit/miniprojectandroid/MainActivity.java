@@ -1,9 +1,13 @@
 package fr.ezeit.miniprojectandroid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        System.out.println("ARRAYLIST ARTICLES" + ListArticle);
-        System.out.println(getIntent().getSerializableExtra("article"));
 
         if (getIntent().getSerializableExtra("article")==null) { // Instanciation de la liste d’article
             ListArticle.add(new Article("iPhone 14 Pro Max", "256Go", 1609, 1));
@@ -25,8 +27,9 @@ public class MainActivity extends AppCompatActivity {
             ListArticle = (ArrayList<Article>) getIntent().getSerializableExtra("article");
         }
 
-        //Article article = (Article) getIntent().getSerializableExtra("article");
-        //ListArticle.add(article);
+        /*for(Article a : ListArticle){
+            Log.d("contenu ", a.getDescription());
+        }*/
 
         //Bouton vers "Ajouter un article"
         Button buttonMainAddItem = (Button)findViewById(R.id.buttonAddAddItem);
@@ -61,6 +64,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            getMenuInflater().inflate(R.menu.main_menu, menu);
+            return true;
+        }
+
+        @Override
+        public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+            switch(item.getItemId()){
+                case(R.id.menuAjout) :
+                    Intent ajoutArticle = new Intent(MainActivity.this, Ajout_article.class);
+                    startActivity(ajoutArticle);
+                    return true;
+                case (R.id.menuListe) :
+                    Intent listeArticle = new Intent(MainActivity.this, ListeArticle.class);
+                    startActivity(listeArticle);
+                    return true;
+                case (R.id.menuModif):
+                    Intent majArticle = new Intent(MainActivity.this, ModifArticle.class);
+                    startActivity(majArticle);
+                    return true;
+                default :
+                    return super.onOptionsItemSelected(item);
+            }
+        }
     private boolean b1 = false;
     //ArrayList Article
     private ArrayList<Article> ListArticle = new ArrayList<>();

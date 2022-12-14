@@ -1,9 +1,13 @@
 package fr.ezeit.miniprojectandroid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,20 +35,6 @@ public class ModifArticle extends AppCompatActivity {
         EditText ptprice = (EditText)findViewById(R.id.editViewPrixArticle);
         EditText ptamount = (EditText)findViewById(R.id.editViewQteArticle);
 
-        /*final ArrayList<Article>[] ListArticlex = new ArrayList[]{new ArrayList<>()};
-        for (Article articles : ListArticlex[0]){
-            ptnom.setText(articles.getName());
-            ptdescription.setText(articles.getDescription());
-            ptdescription.setText((int) articles.getPrice());
-            ptamount.setText(articles.getAmount());
-        }*/
-
-
-
-        //Intent intent = new Intent(ModifArticle.this, ListeArticle.class);
-        //intent.putExtra("article", finalListArticle);
-        //startActivity(intent);
-
         Button BackButton = (Button)findViewById(R.id.buttonModifRetour);
         BackButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,8 +45,22 @@ public class ModifArticle extends AppCompatActivity {
                 price = ptprice.getText().toString();
                 amount = ptamount.getText().toString();
 
-                Article article = new Article(nom, description, Double.parseDouble(price), Integer.parseInt(amount));
-                finalListArticle.add(article);
+                Log.d("contenu nom", nom);
+                try{
+                    if(nom.isEmpty() && description.isEmpty()){
+                        nom = "pomme";
+                        description = "calotte";
+                        price = "44";
+                        amount="1";
+                        Article article = new Article(nom, description, Double.parseDouble(price), Integer.parseInt(amount));
+                        finalListArticle.add(article);
+                    } else {
+                        Article article = new Article(nom, description, Double.parseDouble(price), Integer.parseInt(amount));
+                        finalListArticle.add(article);
+                    }
+                } catch (Exception e){
+                    System.out.println("34");
+                }
 
                 Intent IntentEditItem = new Intent(ModifArticle.this, MainActivity.class);
                 IntentEditItem.putExtra("article", finalListArticle);
@@ -64,6 +68,34 @@ public class ModifArticle extends AppCompatActivity {
             }
         });
     }
+
+    // Menu ... en haut a droite
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+    // Menu ... en haut a droite
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case(R.id.menuAjout) :
+                Intent ajoutArticle = new Intent(ModifArticle.this, Ajout_article.class);
+                startActivity(ajoutArticle);
+                return true;
+            case (R.id.menuListe) :
+                Intent listeArticle = new Intent(ModifArticle.this, ListeArticle.class);
+                startActivity(listeArticle);
+                return true;
+            case (R.id.menuModif):
+                Intent majArticle = new Intent(ModifArticle.this, ModifArticle.class);
+                startActivity(majArticle);
+                return true;
+            default :
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     private String nom;
     private String description;
     private String price;

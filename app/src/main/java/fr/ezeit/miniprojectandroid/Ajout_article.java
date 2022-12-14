@@ -1,9 +1,12 @@
 package fr.ezeit.miniprojectandroid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,6 +63,33 @@ public class Ajout_article extends AppCompatActivity {
             }
         });
 
+    }
+
+    // Menu ... en haut a droite
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+    // Menu ... en haut a droite
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case(R.id.menuAjout) :
+                Intent ajoutArticle = new Intent(Ajout_article.this, Ajout_article.class);
+                startActivity(ajoutArticle);
+                return true;
+            case (R.id.menuListe) :
+                Intent listeArticle = new Intent(Ajout_article.this, ListeArticle.class);
+                startActivity(listeArticle);
+                return true;
+            case (R.id.menuModif):
+                Intent majArticle = new Intent(Ajout_article.this, ModifArticle.class);
+                startActivity(majArticle);
+                return true;
+            default :
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private String nom;

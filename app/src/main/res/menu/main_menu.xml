@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menuAjout"
+        app:showAsAction="never"
+        android:title="Ajout article"></item>
+
+    <item android:id="@+id/menuListe"
+        app:showAsAction="never"
+        android:title="Liste des articles"></item>
+
+    <item android:id="@+id/menuModif"
+        app:showAsAction="never"
+        android:title="Mettre à jour un article"></item>
+
+</menu>
